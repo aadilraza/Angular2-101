@@ -1,0 +1,15 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "http.proxy": "http://proxy.wellsfargo.com:8080",
+    "http.proxyStrictSSL": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/*.csproj*": true,
+        "**/*.config": true,
+        "obj": true,
+        "bin": true
+    }
+}
