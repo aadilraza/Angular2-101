@@ -1,0 +1,16 @@
+{
+    "src": [
+        "app/**/*"
+    ],
+    "allTypeScript": "app/**/*.ts",
+    "allCustomTypings": "app/**/*.d.ts",
+    "libraryTypeScriptDefinitions": "typings/**/*.ts",
+    "devDist": "dist",
+    "includeLibrary": [
+        "node_modules/systemjs/dist/system.src.js",
+        "node_modules/es6-shim/es6-shim.min.js",
+        "node_modules/zone.js/dist/zone.js",
+        "node_modules/reflect-metadata/Reflect.js",
+        "styles/wfa-myriad-pro-typekit.js"
+    ]
+}
