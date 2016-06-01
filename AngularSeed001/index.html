@@ -5,7 +5,6 @@
   <title>Component Library NG</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="app.css" rel="stylesheet" />
   <!-- 1. Load libraries -->
   <!-- Polyfill(s) for older browsers -->
   <script src="lib/es6-shim.min.js"></script>
@@ -15,11 +14,7 @@
   <script src="lib/system.src.js"></script>
   <!-- 2. Configure SystemJS -->
   <script src="systemjs.config.js"></script>
-  <script src="system.yuml.js"></script>
-  <script src="lib/wfa-myriad-pro-typekit.js"></script>
   <script>
-     try { Typekit.load(); }
-        catch (e) { }
     System.import('app').catch(function(err){ console.error(err);  });
   </script>
 </head>
@@ -27,7 +22,7 @@
 <!-- 3. Display the application -->
 
 <body>
-  <app>Loading...</app>
+  <my-app>Loading...</my-app>
 </body>
 
 </html>

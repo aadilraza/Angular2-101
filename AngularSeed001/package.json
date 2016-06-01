@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "postinstall": "typings install",
-    "typings": "typings"
+    "typings": "typings",
+    "dev": "lite-server"
   },
   "license": "ISC",
   "dependencies": {
@@ -27,6 +28,7 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "lite-server": "2.2.0",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-debug": "^2.1.2",
