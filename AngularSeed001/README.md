@@ -15,6 +15,14 @@ open command window at project root and run below commands
      npm install typescript -g
      npm install typings -g
      
+     # detour : check versions of all the necessary tools before proceeding 
+     # it should be equal or higher than below
+     npm -v # ^3.8.3
+     tsc -v # ^1.8.10
+     git --version #  2.8.1.windows.1 (equivalent for Mac)
+     typings -v  # ^0.7.12
+     # also make sure if you are behind company firewall you make necessary proxy chnages for node and typingsrc
+     
      # below commands will install all node package required
      npm install
      
