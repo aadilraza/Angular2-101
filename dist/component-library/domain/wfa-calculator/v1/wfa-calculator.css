@@ -1,0 +1,14 @@
+.result {
+  font-weight: bold;
+}
+.main {
+  background: lightgray;
+  padding: 20px;
+  border: 1px solid red;
+  margin: 20px;
+  width: 500px;
+}
+.wfa-icon-save {
+  font-weight: bold;
+  color: black;
+}

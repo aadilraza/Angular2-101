@@ -1,0 +1,44 @@
+<div class="row form-group pad-15">
+    <div class="col-sm-5">
+        <label class="search-criteria"> Search for </label>
+        <div class="btn-group btn-group-sm pad-side" aria-label="..." data-toggle="buttons">
+            <!--<div *ngFor="let searchCriteria of searchCriteriaList">-->
+            <label *ngFor="let searchCriteria of searchCriteriaList" class="btn btn-default" 
+                [ngClass]="{'btn-primary' : searchCriteria.value == selectedSearchCriteria.value,'disabled': searchCriteria.disabled}">
+                <input type="radio" (click)="changeSearchCriteria(searchCriteria)" name="searchCriteria" class="btn btn-default" 
+                [checked]="searchCriteria.value === selectedSearchCriteria.value"
+                [disabled]="searchCriteria.disabled" />
+                {{searchCriteria.name}}
+            </label>
+            <!--</div>-->
+        </div>
+        <label class="search-criteria">by</label>
+    </div>
+    <div class="col-sm-7">
+        <div class="btn-group btn-group-sm pad-side no-pad-right" aria-label="..." data-toggle="buttons">
+            <!--<div *ngFor="let subCriteria of selectedSearchCriteria.subCriteria">-->
+            <label *ngFor="let subCriteria of selectedSearchCriteria.subCriteria" class="btn btn-default" [ngClass]="{'btn-primary' : subCriteria.value == selectedSearchSubCriteria.value}">
+                <input type="radio" (click)="changeSearchSubCriteria(subCriteria)" name="searchSubCriteria" class="btn btn-default" 
+                [checked]="subCriteria.value == selectedSearchSubCriteria.value" />
+                {{subCriteria.name}}
+            </label>
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-lg-9">
+        <div class="btn-group">
+            <div class="pad-bottom-5">
+                Search for <span class="semi-bold">{{selectedSearchCriteria.name}}</span> by
+                <span class="semi-bold">{{selectedSearchSubCriteria.name}}</span>
+            </div>
+            <input class="form-control search-box" type="text" [(ngModel)]="filterTerm" [placeholder]="selectedSearchSubCriteria.textValue"
+             (keyup)="checkForEnter($event)" />
+            <i class="wi wfa-icon-close searchclear" *ngIf="!!filterTerm" (click)="clearsearchBox()"></i>
+        </div>
+    </div>
+    <div class="col-lg-3 invalid-entry" *ngIf="invalid">
+        Invalid Entry
+    </div>
+</div>

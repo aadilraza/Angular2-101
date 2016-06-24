@@ -1,0 +1,23 @@
+/* this variable is for the bottom border of the entire nav bar (ul) */
+.serach-result-height {
+  max-height: calc(100vh - 350px);
+  overflow-y: auto;
+  overflow-x: auto;
+}
+.noMatchFound {
+  margin: 10px 40%;
+  color: #AE1E23;
+  font-size: 1rem;
+}
+.searchedFor {
+  font-weight: bold;
+}
+.table-hover > tbody > tr:hover {
+  background-color: #fbe7cc;
+  border-color: #F1A033;
+  border-top: 1px solid #F1A033;
+  cursor: pointer;
+}
+.table td {
+  padding: 5px;
+}

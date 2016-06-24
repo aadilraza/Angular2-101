@@ -1,0 +1,5 @@
+<search-panel [data]="searchPanelData" (startSearch)=startSearch($event) (clearSearch)=clearSearch($event)></search-panel>
+<search-result [data]="searchResultData" (selected)=selected($event)></search-result>
+<div class="loader" *ngIf="loading">
+    <i class="wi wfa-icon-loading"></i>
+</div>

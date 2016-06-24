@@ -1,0 +1,106 @@
+/* this variable is for the bottom border of the entire nav bar (ul) */
+.search-box {
+  width: 330px;
+  height: 32px;
+  padding-right: 25px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.search-box::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.btn-primary:hover,
+.btn-primary.hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #00698C;
+  border-color: #00698C;
+}
+.btn-primary:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  content: "";
+  left: 50%;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #00698C;
+  margin-left: -7px;
+  margin-top: 5px;
+}
+.searchclear {
+  position: absolute;
+  right: 10px;
+  top: 31px;
+  margin: auto;
+  cursor: pointer;
+  color: #CCCDCB;
+}
+.col-sm-5,
+.col-sm-7 {
+  padding: 0;
+}
+.pad-bottom-5 {
+  padding-bottom: 5px;
+}
+.pad-15 {
+  padding: 1.5rem;
+  margin-top: -1rem;
+  margin-bottom: 0;
+  padding-bottom: 2rem;
+}
+.semi-bold {
+  font-weight: 600;
+}
+.search-criteria {
+  font-weight: normal;
+  color: #44464A;
+}
+.pad-side {
+  padding: 0 10px;
+}
+.pad-side.no-pad-right {
+  padding-right: 0;
+}
+.no-match {
+  height: 45px;
+  padding-top: 20px;
+  text-align: center;
+  color: #aaa;
+  font-size: 12px;
+}
+.invalid-entry {
+  height: 45px;
+  padding-top: 20px;
+  text-align: center;
+  color: #aaa;
+  font-size: 12px;
+}
+::-webkit-input-placeholder {
+  text-transform: capitalize;
+  color: #8F9092;
+  font-style: italic;
+  line-height: 20px;
+}
+:-moz-placeholder {
+  text-transform: capitalize;
+  color: #8F9092;
+  font-style: italic;
+  line-height: 20px;
+}
+::-moz-placeholder {
+  text-transform: capitalize;
+  color: #8F9092;
+  font-style: italic;
+  line-height: 20px;
+}
+:-ms-input-placeholder {
+  color: #8F9092;
+  font-style: italic;
+  line-height: 20px;
+}

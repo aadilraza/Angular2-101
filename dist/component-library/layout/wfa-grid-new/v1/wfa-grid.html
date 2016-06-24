@@ -1,0 +1,33 @@
+<div>
+    <div class="pull-right" *ngIf="data.dataTable.length>0 && data.allowPaging == true">
+        <span>
+            Show
+            <select class="wfa-white-filterDropdown" (change)="dropDownChanged($event.target.value)">
+                <option *ngFor="let option of optionChoices" [value]="option">{{option}}</option>
+            </select>
+            <span>Rows</span>
+        </span>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th *ngFor="let column of data.columns" (click)="sort(column)" [ngStyle]="{ 'text-align': column.textAlignment !== null ? column.textAlignment : '',
+                     'width': column.width !== null ? column.width : '' }">
+                    <span>{{column.headerText}}</span>
+                    <span class="wi" *ngIf="data.allowSorting" [ngClass]="{ 'wfa-icon-chevron-up': column.dataKey == selctedColumn.dataKey && selctedColumn.sortDirection === 'descending' , 
+                    'wfa-icon-chevron-down': column.dataKey == selctedColumn.dataKey && selctedColumn.sortDirection === 'ascending' }"></span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let value of sortedTable" (click)="rowClicked(value)">
+                <td *ngFor="let column of data.columns" [ngStyle]="{ 'text-align': column.textAlignment !== null ? column.textAlignment : '',
+                    'width': column.width !== null ? column.width : '' }">
+                    <span *ngIf="column.dataType == 'currency'" [checkForNegative]="value[column.dataKey]">{{value[column.dataKey] | wfaCurrency}}</span>
+                    <span *ngIf="column.dataType != 'currency'">{{value[column.dataKey]}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <wfa-grid-paginator [numOfRow]="data.dataTable.length" [pageSize]="pageSize" [pageNumber]="pageNumber" (pageChange)="pageChange($event)"></wfa-grid-paginator>
+</div>

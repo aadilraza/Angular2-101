@@ -1,0 +1,68 @@
+<div class="serach-result-height">   
+    <table *ngIf="data.searchFor == 'Client' && data.searchResult.length > 0" class="form-group table table-hover table-striped" >
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th *ngIf="data.searchBy == 'ssn' || data.searchBy == 'customername'">SSN/Tax ID</th>
+                <th *ngIf="data.searchBy == 'accountnumber'">Acct #</th>
+                <th *ngIf="data.searchBy =='phonenumber'">Phone Number(Phone Usage)</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let result of data.searchResult" (click)="entitySelected(result)">
+                <td [ngClass]="{'searchedFor' :data.searchBy == 'customername' }">{{result.CustomerName}}</td>
+                <td *ngIf="data.searchBy == 'ssn' || data.searchBy == 'customername'" [ngClass]="{'searchedFor' :data.searchBy == 'ssn' }">{{!!result.SSN?result.SSN:result.TaxID}}</td>
+                <td *ngIf="data.searchBy == 'accountnumber'" [ngClass]="{'searchedFor' :data.searchBy == 'accountnumber' }">{{result.AccountNumber}}</td>
+                <td *ngIf="data.searchBy == 'phonenumber'" [ngClass]="{'searchedFor' :data.searchBy == 'phonenumber' }">                    
+                    <span *ngFor="let phone of result.PhoneDetails">{{phone.PhoneNumber}}<span>(</span><span>{{phone.PhoneUsage}}</span><span>)</span><br /></span>                   
+                </td>
+                <td>                    
+                    <span *ngIf="result.AddressDetails && result.AddressDetails.AddressLineList !== ''">{{result.AddressDetails.AddressLineList}}</span>                    
+                </td>
+                <td>                    
+                    <span *ngIf="result.AddressDetails && result.AddressDetails.City !== ''">{{result.AddressDetails.City}}</span>                    
+                </td>
+                <td>                   
+                    <span *ngIf="result.AddressDetails && result.AddressDetails.State!==''">{{result.AddressDetails.State}}</span>                   
+                </td>
+                <td>                   
+                    <span *ngIf="result.AddressDetails && result.AddressDetails.PostalCode!==''">{{result.AddressDetails.PostalCode}}</span>                                       
+                    <span *ngIf="result.AddressDetails && result.AddressDetails.ProvinceCode!==''" >{{result.AddressDetails.ProvinceCode}}</span>                    
+                </td>
+            </tr>
+        </tbody>
+    </table>    
+       
+    <table *ngIf="data.searchFor == 'WFEmployee' && data.searchResult.length > 0 " class="form-group table table-hover table-striped" >
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Employee ID</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Location</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let result of data.searchResult.slice(0, 10)" (click)="entitySelected(result)">
+                <td [ngClass]="{'searchedFor' :data.searchBy == 'employeename' }">{{result.EmployeeName}}</td>
+                <td [ngClass]="{'searchedFor' :data.searchBy == 'employeeid' }">{{result.EmployeeID}}</td>
+                <td [ngClass]="{'searchedFor' :data.searchBy == 'elid' }">{{result.Email}}</td>
+                <td [ngClass]="{'searchedFor' :data.searchBy == 'employeephonenumber' }">{{result.PrimaryPhone}}</td>
+                <td>{{result.Location}}</td>
+                <td>{{result.Status}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div *ngIf="(data.searchFor == 'Client'|| data.searchFor == 'WFEmployee') && (data.searchResult.length == 0)"
+                    [ngClass]="{noMatchFound : (data.searchFor == 'Client' || data.searchFor == 'WFEmployee') && (data.searchResult.length == 0)}">
+        No Match Found
+    </div>
+</div>
+

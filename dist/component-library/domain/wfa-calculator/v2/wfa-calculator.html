@@ -1,0 +1,23 @@
+<div class="main">
+    <label>Input 1 : {{data.input1}}</label>
+    <br />
+    <br />
+    <label>Input 2 : {{data.input2}}</label>
+    <br />
+    <br />
+    <input [(ngModel)]="data.a1">
+    <label>+</label>
+    <input [(ngModel)]="data.a2">
+    <label>=</label>
+    <label class="result">{{parseInt(data.a1) + parseInt(data.a2)}}</label>
+    <br />
+    <br />
+    <input [(ngModel)]="data.a3">
+    <label>*</label>
+    <input [(ngModel)]="data.a4">
+    <label>=</label>
+    <label class="result">{{parseInt(data.a3) * parseInt(data.a4)}}</label>
+    <br>
+    <br>
+    <div class="wi wfa-icon-save" (click)="saveResult()" >Share Result</div>
+</div>

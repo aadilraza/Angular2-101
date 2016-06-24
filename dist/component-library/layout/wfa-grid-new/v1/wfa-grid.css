@@ -1,0 +1,57 @@
+.custom-row {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+.pad-right {
+  padding-right: 20px;
+}
+.table,
+.table-striped {
+  font-weight: 600;
+}
+table {
+  width: 100%;
+}
+table th {
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: #326295;
+  margin: 0 11px;
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+}
+table th:hover {
+  cursor: pointer;
+}
+table th .wfa-icon-chevron-down,
+table th .wfa-icon-chevron-up {
+  color: #326295;
+  font-size: smaller;
+}
+table tbody tr,
+table tbody tRow {
+  border-bottom: 1px solid #BFC0BE;
+  height: 40px;
+}
+table tbody tr td,
+table tbody tRow td {
+  color: black;
+  padding: 0 10px;
+  -ms-word-break: break-word;
+  word-break: break-word;
+  margin: 0 2px;
+}
+table tbody tr:hover,
+table tbody tRow:hover {
+  cursor: pointer;
+  color: #8F9092;
+  background-color: #FBE7CC;
+}
+table tbody .blank-rows {
+  border-bottom: 2px solid transparent;
+}
+table tbody .blank-rows:hover {
+  background-color: white;
+  cursor: default;
+}

@@ -1,0 +1,25 @@
+<div class="pager">
+    <div class="pull-right">
+        <span [hidden]="noOfPages < 5">
+     <button class="btn btn-sm btn-default" type="button" (click)="previous()" [class.disabled]="pageNumber <= 1">
+       Previous
+    </button>
+    </span>
+        <span *ngFor="let page of allPages">
+          <button class="btn btn-sm btn-default" [class.btn-primary]="pageNumber == page.value" (click)="moveToPage(page.value)">{{page.label}}</button>
+        </span>
+        <span [hidden]="noOfPages < 5">
+     <button class="btn btn-sm btn-default" type="button" (click)="next()" [class.disabled]="pageNumber >= noOfPages">
+       Next
+    </button>
+    </span>
+    </div>
+    <div class="pull-left">
+        <span>Viewing </span>
+        <span>{{pageNumber*pageSize-pageSize+1}}</span>
+        <span *ngIf="pageNumber <= noOfPages">-</span>
+        <span *ngIf="pageNumber < noOfPages">{{pageNumber*pageSize}}</span>
+        <span *ngIf="pageNumber === noOfPages">{{numOfRow}}</span>
+        <span> of </span><span>{{numOfRow}}</span>
+    </div>
+</div>
