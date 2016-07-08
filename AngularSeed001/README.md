@@ -14,7 +14,7 @@ open command window at project root and run below commands
      # this will install typescript and typings node module globally
      npm install typescript -g
      npm install typings -g
-     npm install gulp -g
+     npm install gulp-cli -g
      
      # detour : check versions of all the necessary tools before proceeding 
      # it should be equal or higher than below
