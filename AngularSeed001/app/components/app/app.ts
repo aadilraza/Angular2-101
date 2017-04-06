@@ -1,7 +1,6 @@
 import { Component } from "../../barrel";
 
-@Component({
-  
+@Component({  
   moduleId: module.id,
   selector: "my-app",
   templateUrl: "app.html",
